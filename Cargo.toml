@@ -1,0 +1,19 @@
+[package]
+name = "vtube_overlay"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = "0.4.26"
+image = "0.24.6"
+opencv = { version = "0.82.1", features = ["objdetect", "clang-runtime"] }
+# nokhwa = { version = "0.10.4", features = ["output-wgpu"] }
+wgpu = "0.16.1"
+winit = "0.28.6"
+
+[dependencies.nokhwa]
+git = "https://github.com/l1npengtul/nokhwa.git"
+rev = "ea971242a888987222375189fb78c84fa85e5a4e"
+features = ["input-native"]
