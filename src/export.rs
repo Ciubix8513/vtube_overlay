@@ -10,11 +10,12 @@ pub fn arr_to_image(
     format: image::ImageOutputFormat,
 ) -> Result<Vec<u8>, ImageError> {
     let img = img
-        .chunks_exact(1)
+        .iter()
+        // .chunks_exact(1)
         .map(|i| {
             let mut array = [0; 3];
             // array.copy_from_slice(i);
-            array.fill_with(|| i[0]);
+            array.fill_with(|| *i);
             Rgb(array)
         })
         .collect::<Vec<Rgb<u8>>>();
